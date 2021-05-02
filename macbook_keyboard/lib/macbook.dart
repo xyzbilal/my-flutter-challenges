@@ -59,6 +59,57 @@ class MacbookKeyboard extends StatelessWidget {
     this.backgroundColor,
   }) : super(key: key);
 
+  List<List<String>> numbersRow = [
+    ['~','`'],
+    ['!','1'],
+    ['@','2'],
+    ['#','3'],
+    ['\$','4'],
+    ['%','5'],
+    ['^','6'],
+    ['&','7'],
+    ['*','8'],
+    ['(','9'],
+    [')','0'],
+    ['_','-'],
+    [ '+','='],
+  ];
+  
+  List<List<String>> qwertyRow = [
+    ['Q',''],
+    ['W',''],
+    ['E',''],
+    ['R',''],
+    ['T',''],
+    ['Y',''],
+    ['U',''],
+    ['I',''],
+    ['O',''],
+    ['P',''],
+    ['{','['],
+    ['}',']'],
+    [ '|','\\'],
+  ];
+  
+   List<List<String>> asdfgRow = [
+    ['A',''],
+    ['S',''],
+    ['D',''],
+    ['F',''],
+    ['G',''],
+    ['H',''],
+    ['J',''],
+    ['K',''],
+    ['L',''],
+    ['P',''],
+    [':',';'],
+    ['"','\''],
+  
+  ];
+  
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     final _height = 48.0;
@@ -112,84 +163,15 @@ class MacbookKeyboard extends StatelessWidget {
               height: _height,
               separatorWidth: _separator,
               keys: [
+                
+                for (final numberKey in numbersRow)
                 Expanded(
                   child: MultiCharKey(
-                    upperChar: '~',
-                    lowerChar: '`',
+                    upperChar:numberKey[0],
+                    lowerChar: numberKey[1],
                   ),
                 ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '!',
-                    lowerChar: '1',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '@',
-                    lowerChar: '2',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '#',
-                    lowerChar: '3',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '\$',
-                    lowerChar: '4',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '%',
-                    lowerChar: '5',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '^',
-                    lowerChar: '6',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '&',
-                    lowerChar: '7',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '*',
-                    lowerChar: '8',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '(',
-                    lowerChar: '9',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: ')',
-                    lowerChar: '0',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '_',
-                    lowerChar: '-',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '+',
-                    lowerChar: '=',
-                  ),
-                ),
+              
                 SingleCharKey(
                   alignment: Alignment.bottomRight,
                   width: 75,
@@ -209,84 +191,25 @@ class MacbookKeyboard extends StatelessWidget {
                   width: 75,
                   char: 'tab',
                 ),
+                
+                for(final key in qwertyRow)
+                
+                if(key[1]=='')
                 Expanded(
                   child: SingleCharKey(
                     alignment: Alignment.center,
-                    char: 'Q',
+                    char: key[0],
                   ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'W',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'E',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'R',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'T',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'Y',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'U',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'I',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'O',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'P',
-                  ),
-                ),
+                )
+                else
                 Expanded(
                   child: MultiCharKey(
-                    upperChar: '{',
-                    lowerChar: '[',
+                    upperChar: key[0],
+                    lowerChar: key[1],
                   ),
                 ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '}',
-                    lowerChar: ']',
-                  ),
-                ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '|',
-                    lowerChar: '\\',
-                  ),
-                ),
+            
+            
               ],
             ),
           ),
@@ -301,72 +224,25 @@ class MacbookKeyboard extends StatelessWidget {
                   width: 90,
                   char: 'caps lock',
                 ),
+                
+                 for(final key in asdfgRow)
+                
+                if(key[1]=='')
                 Expanded(
                   child: SingleCharKey(
                     alignment: Alignment.center,
-                    char: 'A',
+                    char: key[0],
                   ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'S',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'D',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'F',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'G',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'H',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'J',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'K',
-                  ),
-                ),
-                Expanded(
-                  child: SingleCharKey(
-                    alignment: Alignment.center,
-                    char: 'L',
-                  ),
-                ),
+                )
+                else
                 Expanded(
                   child: MultiCharKey(
-                    upperChar: ':',
-                    lowerChar: ';',
+                    upperChar: key[0],
+                    lowerChar: key[1],
                   ),
                 ),
-                Expanded(
-                  child: MultiCharKey(
-                    upperChar: '"',
-                    lowerChar: '\'',
-                  ),
-                ),
+              
+            
                 SingleCharKey(
                   alignment: Alignment.bottomRight,
                   width: 90,
